@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  politician: one
+  issue: one
+  support: false
+
+two:
+  politician: two
+  issue: two
+  support: false
