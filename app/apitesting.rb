@@ -32,7 +32,7 @@ last_name: hash["last_name"],
 party: hash["party"], 
 chamber: "house", 
 state: hash["state"]}}
-puts parse_hashes
+# puts parse_hashes
 =begin
 senate
 "Bernard Sanders "    
@@ -61,4 +61,9 @@ house
 "Liz Cheney "
 =end
 
+Politician.all.each do |politician|
+    Issue.each do |issue|
+        puts "Stance.create(politician:#{politician}, issue:#{issue}, stance: '')"
+    end
+end
 

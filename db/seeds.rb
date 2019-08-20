@@ -57,6 +57,216 @@ imm = Issue.create(topic:"Immigration", approval_statement: "", disapproval_stat
 gun = Issue.create(topic:"Guns", approval_statement: "", disapproval_statement: "")
 mar = Issue.create(topic:"Marijuana", approval_statement: "", disapproval_statement: "")
 cli = Issue.create(topic:"Climate Change", approval_statement: "", disapproval_statement: "")
-hel = Issue.create(topic:"Healthcare", approval_statement: "", disapproval_statement: "")
+hea = Issue.create(topic:"Healthcare", approval_statement: "", disapproval_statement: "")
 cor = Issue.create(topic:"Corruption", approval_statement: "", disapproval_statement: "")
 imp = Issue.create(topic:"Imperialism", approval_statement: "", disapproval_statement: "")
+
+# Politician.all.each do |politician|
+#     puts "##{politician[:first_name] + " " + politician[:last_name]}"
+#     Issue.all.each do |issue|
+#         puts "Stance.create(politician_id:#{(politician[:first_name][0] + politician[:first_name][1] + politician[:last_name][0] + politician[:last_name][1]).downcase+".id"}, issue_id:#{(issue[:topic].slice(0..2)).downcase+".id"}, support: true)"
+#     end
+#     puts "    "
+# end
+
+#Bernard Sanders
+Stance.create(politician_id:besa.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:besa.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:besa.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:besa.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:besa.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:besa.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:besa.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:besa.id, issue_id:imp.id, support: false)
+
+#Cory Booker
+Stance.create(politician_id:cobo.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:cobo.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:cobo.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:cobo.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:cobo.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:cobo.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:cobo.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:cobo.id, issue_id:imp.id, support: true)
+    
+#Michael Crapo
+Stance.create(politician_id:micr.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:micr.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:micr.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:micr.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:micr.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:micr.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:micr.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:micr.id, issue_id:imp.id, support: true)
+    
+#Ted Cruz
+Stance.create(politician_id:tecr.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:tecr.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:tecr.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:tecr.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:tecr.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:tecr.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:tecr.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:tecr.id, issue_id:imp.id, support: true)
+    
+#Kirsten Gillibrand
+Stance.create(politician_id:kigi.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:kigi.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:kigi.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:kigi.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:kigi.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:kigi.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:kigi.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:kigi.id, issue_id:imp.id, support: false)
+    
+#Lindsey Graham
+Stance.create(politician_id:ligr.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:ligr.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:ligr.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:ligr.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:ligr.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:ligr.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:ligr.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:ligr.id, issue_id:imp.id, support: true)
+    
+#Kamala Harris
+Stance.create(politician_id:kaha.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:kaha.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:kaha.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:kaha.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:kaha.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:kaha.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:kaha.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:kaha.id, issue_id:imp.id, support: true)
+    
+#Mitch McConnell
+Stance.create(politician_id:mimc.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:mimc.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:mimc.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:mimc.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:mimc.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:mimc.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:mimc.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:mimc.id, issue_id:imp.id, support: true)
+    
+#Mitt Romney
+Stance.create(politician_id:miro.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:miro.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:miro.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:miro.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:miro.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:miro.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:miro.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:miro.id, issue_id:imp.id, support: true)
+    
+#Elizabeth Warren
+Stance.create(politician_id:elwa.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:elwa.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:elwa.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:elwa.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:elwa.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:elwa.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:elwa.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:elwa.id, issue_id:imp.id, support: nil) 
+    
+#Joaquin Castro 
+Stance.create(politician_id:joca.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:joca.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:joca.id, issue_id:gun.id, support: nil) 
+Stance.create(politician_id:joca.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:joca.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:joca.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:joca.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:joca.id, issue_id:imp.id, support: true)
+    
+#Liz Cheney
+Stance.create(politician_id:lich.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:lich.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:lich.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:lich.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:lich.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:lich.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:lich.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:lich.id, issue_id:imp.id, support: true)
+    
+#Tulsi Gabbard
+Stance.create(politician_id:tuga.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:tuga.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:tuga.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:tuga.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:tuga.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:tuga.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:tuga.id, issue_id:cor.id, support: nil)
+Stance.create(politician_id:tuga.id, issue_id:imp.id, support: nil)
+    
+#Barry Loudermilk
+Stance.create(politician_id:balo.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:balo.id, issue_id:imp.id, support: false)
+    
+#Kevin McCarthy
+Stance.create(politician_id:kemc.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:kemc.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:kemc.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:kemc.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:kemc.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:kemc.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:kemc.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:kemc.id, issue_id:imp.id, support: true)
+    
+#Alexandria Ocasio-Cortez
+Stance.create(politician_id:aloc.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:aloc.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:aloc.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:aloc.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:aloc.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:aloc.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:aloc.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:aloc.id, issue_id:imp.id, support: false)
+    
+#Ilhan Omar
+Stance.create(politician_id:ilom.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:ilom.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:ilom.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:ilom.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:ilom.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:ilom.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:ilom.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:ilom.id, issue_id:imp.id, support: false)
+    
+#Steve Scalise
+Stance.create(politician_id:stsc.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:stsc.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:stsc.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:stsc.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:stsc.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:stsc.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:stsc.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:stsc.id, issue_id:imp.id, support: true)
+    
+#Lloyd Smucker
+Stance.create(politician_id:llsm.id, issue_id:abo.id, support: false)
+Stance.create(politician_id:llsm.id, issue_id:imm.id, support: false)
+Stance.create(politician_id:llsm.id, issue_id:gun.id, support: false)
+Stance.create(politician_id:llsm.id, issue_id:mar.id, support: false)
+Stance.create(politician_id:llsm.id, issue_id:cli.id, support: false)
+Stance.create(politician_id:llsm.id, issue_id:hea.id, support: false)
+Stance.create(politician_id:llsm.id, issue_id:cor.id, support: true)
+Stance.create(politician_id:llsm.id, issue_id:imp.id, support: true)
+    
+#Rashida Tlaib
+Stance.create(politician_id:ratl.id, issue_id:abo.id, support: true)
+Stance.create(politician_id:ratl.id, issue_id:imm.id, support: true)
+Stance.create(politician_id:ratl.id, issue_id:gun.id, support: true)
+Stance.create(politician_id:ratl.id, issue_id:mar.id, support: true)
+Stance.create(politician_id:ratl.id, issue_id:cli.id, support: true)
+Stance.create(politician_id:ratl.id, issue_id:hea.id, support: true)
+Stance.create(politician_id:ratl.id, issue_id:cor.id, support: false)
+Stance.create(politician_id:ratl.id, issue_id:imp.id, support: false)
+   
+    
