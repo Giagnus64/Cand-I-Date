@@ -1,6 +1,4 @@
-
 class LoginController < ApplicationController
-
   def new
     # gets the form
   end
@@ -9,8 +7,9 @@ class LoginController < ApplicationController
     # check the information inside the form
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
-      flash[:message] = "Logging in #{@user.email}"
-      redirect_to start_swiping_path
+      session[:user_id] = @user.id
+      byebug
+      redirect_to ("/")
     else
       flash[:message] = "Incorrect username or password"
       redirect_to "/welcome"

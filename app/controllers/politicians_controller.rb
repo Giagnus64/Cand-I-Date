@@ -1,19 +1,21 @@
 class PoliticiansController < ApplicationController
     before_action :find_politician, only: [:show, :edit, :update]
-
+    before_action :authorized
+    #page to swipe on
     def index
     @politicians = Politician.all
     end
-    
+    #politician's show page
     def show
     
     end
-
+    #make a politician
     def new
     @politician = Politician.new()
     end
 
-
+    #make a politician
+    #also assign issues to that politician
     def create 
     @politician = Politician.create(politician_params)
         if @politician.valid?
@@ -23,7 +25,7 @@ class PoliticiansController < ApplicationController
         redirect_to(new_politician_path)
         end
     end
-
+    #edit politician stats page
     def edit
     end
 

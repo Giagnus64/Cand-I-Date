@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
-        before_action :find_issue, only: [:show]
+=begin
+    before_action :find_issue, only: [:show]
 
     def index
     @issues = Issue.all
@@ -32,5 +33,5 @@ class IssuesController < ApplicationController
     def issue_params
         permitted = params.require(:issue).permit(:topic, :approval_statement, :disapproval_statement)
     end
-
+=end
 end

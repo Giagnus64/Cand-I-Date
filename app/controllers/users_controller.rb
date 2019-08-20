@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :new, :create, :edit, :update, :delete]
+    before_action :authorized, only: [:index, :show, :edit, :update, :delete]
+    # page unknown use
     def index
         @users = User.all
     end
-
+    # Your Profile
     def show
         
     end
-
+    #register
     def new 
         @user = User.new
     end
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
             redirect_to new_user_path
         end
     end
-
+    #edit your profile
     def edit
 
     end
@@ -35,7 +37,7 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors.full_messages
         end
     end
-    
+    #button to destroy on edit profile page
     def destroy
         @user.destroy
         redirect_to login_path
