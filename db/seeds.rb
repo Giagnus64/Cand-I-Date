@@ -167,12 +167,12 @@ Stance.create(politician_id:elwa.id, issue_id:mar.id, support: true)
 Stance.create(politician_id:elwa.id, issue_id:cli.id, support: true)
 Stance.create(politician_id:elwa.id, issue_id:hea.id, support: true)
 Stance.create(politician_id:elwa.id, issue_id:cor.id, support: false)
-Stance.create(politician_id:elwa.id, issue_id:imp.id, support: false) #maybe
+Stance.create(politician_id:elwa.id, issue_id:imp.id, support: nil) 
     
-#Joaquin Castro *** Not Enough Info
+#Joaquin Castro 
 Stance.create(politician_id:joca.id, issue_id:abo.id, support: true)
 Stance.create(politician_id:joca.id, issue_id:imm.id, support: true)
-Stance.create(politician_id:joca.id, issue_id:gun.id, support: true) #maybe
+Stance.create(politician_id:joca.id, issue_id:gun.id, support: nil) 
 Stance.create(politician_id:joca.id, issue_id:mar.id, support: true)
 Stance.create(politician_id:joca.id, issue_id:cli.id, support: true)
 Stance.create(politician_id:joca.id, issue_id:hea.id, support: true)
@@ -189,15 +189,15 @@ Stance.create(politician_id:lich.id, issue_id:hea.id, support: false)
 Stance.create(politician_id:lich.id, issue_id:cor.id, support: true)
 Stance.create(politician_id:lich.id, issue_id:imp.id, support: true)
     
-#Tulsi Gabbard *** not enough info
+#Tulsi Gabbard
 Stance.create(politician_id:tuga.id, issue_id:abo.id, support: true)
 Stance.create(politician_id:tuga.id, issue_id:imm.id, support: true)
 Stance.create(politician_id:tuga.id, issue_id:gun.id, support: true)
 Stance.create(politician_id:tuga.id, issue_id:mar.id, support: true)
 Stance.create(politician_id:tuga.id, issue_id:cli.id, support: true)
 Stance.create(politician_id:tuga.id, issue_id:hea.id, support: true)
-Stance.create(politician_id:tuga.id, issue_id:cor.id, support: false)
-Stance.create(politician_id:tuga.id, issue_id:imp.id, support: false)
+Stance.create(politician_id:tuga.id, issue_id:cor.id, support: nil)
+Stance.create(politician_id:tuga.id, issue_id:imp.id, support: nil)
     
 #Barry Loudermilk
 Stance.create(politician_id:balo.id, issue_id:abo.id, support: false)
