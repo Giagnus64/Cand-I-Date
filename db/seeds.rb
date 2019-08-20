@@ -52,14 +52,14 @@ llsm = Politician.create({:first_name=>"Lloyd", :last_name=>"Smucker", :party=>"
 ratl = Politician.create({:first_name=>"Rashida", :last_name=>"Tlaib", :party=>"D", :chamber=>"house", :state=>"MI", :img_url => "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Rashida_Tlaib%2C_official_portrait%2C_116th_Congress_%28cropped_2%29.jpg/440px-Rashida_Tlaib%2C_official_portrait%2C_116th_Congress_%28cropped_2%29.jpg"})
 
 
-abo = Issue.create(topic:"Abortion", approval_statement: "", disapproval_statement: "")
-imm = Issue.create(topic:"Immigration", approval_statement: "", disapproval_statement: "")
-gun = Issue.create(topic:"Guns", approval_statement: "", disapproval_statement: "")
-mar = Issue.create(topic:"Marijuana", approval_statement: "", disapproval_statement: "")
-cli = Issue.create(topic:"Climate Change", approval_statement: "", disapproval_statement: "")
-hea = Issue.create(topic:"Healthcare", approval_statement: "", disapproval_statement: "")
-cor = Issue.create(topic:"Corruption", approval_statement: "", disapproval_statement: "")
-imp = Issue.create(topic:"Imperialism", approval_statement: "", disapproval_statement: "")
+abo = Issue.create(topic:"Abortion", approval_statement: "I believe women are autonomous beings and have control over their on bodies.", disapproval_statement: "I dominate women as they are my property. ")
+imm = Issue.create(topic:"Immigration", approval_statement: "The U.S. was built by and for immigrants.", disapproval_statement: "Fuck you, I got mine. #BuildTheWall")
+gun = Issue.create(topic:"Gun Control", approval_statement: "America has a gun problem.", disapproval_statement: "I am a gold star member of the NRA.")
+mar = Issue.create(topic:"Marijuana", approval_statement: "Legalize it, brah. 🥦", disapproval_statement: "Marijuana is a gateway drug to premarital sex. I want more slave labor for our prisons. ")
+cli = Issue.create(topic:"Climate Change", approval_statement: "We must take action to preserve Mother Earth.", disapproval_statement: "I don't believe in Science and I support natural gas.")
+hea = Issue.create(topic:"Healthcare", approval_statement: "Healthcare is a human right. ", disapproval_statement: "I want to make money off of sick people. Perdue is my #1 campaign contributor.")
+cor = Issue.create(topic:"Corruption", approval_statement: "I'm a politician for the money. #superPACS4lyfe", disapproval_statement: "Most of my campaign funds come from independent donors.")
+imp = Issue.create(topic:"Imperialism", approval_statement: "I'm a colonizer.", disapproval_statement: "We shouldn't pursue reckless adventures abroad, we should rebuild America's strength at home.")
 
 # Politician.all.each do |politician|
 #     puts "##{politician[:first_name] + " " + politician[:last_name]}"
