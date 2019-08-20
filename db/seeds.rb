@@ -270,3 +270,15 @@ Stance.create(politician_id:ratl.id, issue_id:cor.id, support: false)
 Stance.create(politician_id:ratl.id, issue_id:imp.id, support: false)
    
     
+u1 = User.create(
+    first_name: "Gianfranco",
+    last_name: "Nuschese",
+    email: "gn@gn.com",
+    password: "loginbro"
+)
+u2 = User.create(
+    first_name: "Alessandra",
+    last_name: "Vertrees",
+    email: "alessandra@vertrees.com",
+    password: "password"
+)
