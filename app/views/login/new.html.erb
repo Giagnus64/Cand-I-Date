@@ -1,3 +1,4 @@
+  <div class="container border border-dark rounded mt-5 py-4 bg-success ">
 <h1 class="mx-auto text-center pt-5">Welcome To Cand-I-Date!</h1>
 
 <% if flash[:message] %>
@@ -5,11 +6,11 @@
 <% end %>
 
 <% if !@logged_in %>
-    <div class="d-flex" style="vertical-align: middle;padding-top: 5%;">
+
       <div class="container border border-dark rounded py-3 text-center">
-        <h2 class="mx-auto text-center">Login</h2>
-        <div class="row justify-content-center">
-          <div class="col-6">
+        <h2 class=" text-center">Login</h2>
+        <div class="row justify-content-around">
+          <div class="col-6 text-center">
             <%= form_tag "/login" do %>
                 <div class="form-group">
                         <%= label_tag :email%>
@@ -24,9 +25,11 @@
             <% end %>
           </div>
         </div>
-      </div>
-    </div>
+  </div>
+
 
   <% else %>
+  <div class="row justify-content-center">
     <h1 class="logged-in-message">You are already logged in as <%= @current_user.full_name %>!</h1>
+    </div>
   <% end %>
