@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_up_auth_variables
-  before_action :authorized
+  #before_action :authorized
 
   def set_up_auth_variables
     @user_id = session["user_id"]
