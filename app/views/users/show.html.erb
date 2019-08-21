@@ -1,1 +1,10 @@
 <%= @current_user.full_name %>
+
+<%= link_to "Edit Profile", edit_user_path(@current_user), class: "btn btn-secondary"%>
+<%= button_to "Delete Profile", @current_user, method: :delete, class:"btn btn-danger" %>
+<% @current_user.politician_matches.each do |politician| %>
+<%# make a link to each politician %>
+<div class="card-container">
+    <p><%= politician.full_name %></p>
+</div>
+<% end %>
