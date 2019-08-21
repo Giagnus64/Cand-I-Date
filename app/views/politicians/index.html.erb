@@ -1,17 +1,38 @@
-<div class="card" style="width: 18rem;">
-    <%= image_tag @politician.img_url, {class:"card-img-top"}%> 
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+<div class="container ">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card " >
+        <div class="row no-gutters justify-content-around">
+          <div class="col-md-4">
+              <!--<div class="card" style="width: 18rem;">-->
+            <div id="card-img" class="shadow">
+            <%= image_tag @politician.liz_img_url, {class:"card-img-top", id:"lizard_img"}%> 
+            <%= image_tag @politician.img_url, {class:"card-img-top", id:"politician_img"}%> 
+            
+            </div>
+          </div>
+          <div class="col-md-8">
+            
+              <div class="card-body">
+                <h5 class="card-title"><%= @politician.full_name %></h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">State: <%= @politician.state %></li>
+                <li class="list-group-item">Party: <%= @politician.party%></li>
+                <li class="list-group-item">Chamber: <%= @politician.chamber%></li>
+              </ul>
+          </div>
+          <div class="card-body ">
+                <div class="row col-md-12 justify-content-around">
+                  
+                    <p class="card-text"><%= @politician.bio%></p>
+                 
+                  <%= button_to  "Swipe Left", {:controller => "follows", :action => "create",  :user_id => @current_user.id, :politician_id => @politician.id, :match=> false, :method => :post}, class:"btn btn-dark" %>
+                  <%= button_to  "Swipe Right", {:controller => "follows", :action => "create", :user_id => @current_user.id, :politician_id => @politician.id, :match=> true, :method => :post}, class:"btn btn-dark" %>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

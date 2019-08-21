@@ -8,4 +8,25 @@ class User < ApplicationRecord
     def full_name
         "#{self.first_name} #{self.last_name}" 
     end
+
+    #custom method to make sure this user doesnt see a politician they have already seen
+    def has_not_seen
+        Politician.all.select do |politician|
+            !self.politicians.include?(politician)
+        end
+    end
+
+    #method to filter out follow instances where match is true
+    def swipe_right
+        Follow.all.select do |follow|
+            follow.match #returns true if true, returns false if false
+        end
+    end
+    
+    #method to filter out follow instances where match is true
+    def politician_matches
+        self.swipe_right.map do |follow|
+            Politician.find(follow.politician_id)
+        end
+    end
 end

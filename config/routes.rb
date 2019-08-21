@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  
-  # resources :follows
+  resources :follows
   resources :users
   # possibly unneccesary
   # resources :stances
