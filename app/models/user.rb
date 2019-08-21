@@ -9,9 +9,6 @@ class User < ApplicationRecord
     def full_name
         "#{self.first_name} #{self.last_name}" 
     end
-<<<<<<< HEAD
-    
-=======
 
     #custom method to make sure this user doesnt see a politician they have already seen
     def has_not_seen
@@ -20,22 +17,12 @@ class User < ApplicationRecord
         end
     end
 
->>>>>>> f4e3ec87bfd942a29f3858f1f159aedf5a7df093
     #method to filter out follow instances where match is true
     def swipe_right
         Follow.all.select do |follow|
             follow.match #returns true if true, returns false if false
         end
     end
-<<<<<<< HEAD
-   #method to filter out follow instances where match is true
-    def politician_matches
-            self.swipe_right.map do |follow|
-                Politician.find(follow.politician_id)
-            end
-    end
-    
-=======
     
     #method to filter out follow instances where match is true
     def politician_matches
@@ -43,5 +30,4 @@ class User < ApplicationRecord
             Politician.find(follow.politician_id)
         end
     end
->>>>>>> f4e3ec87bfd942a29f3858f1f159aedf5a7df093
 end
