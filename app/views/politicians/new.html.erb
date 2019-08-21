@@ -1,0 +1,47 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+<% end %>
+    <div class="container border border-dark rounded mt-5 py-4 bg-info">
+        <h1 class="mx-auto text-center py-2">New Politician</h1>
+        <div class="row justify-content-center">
+          <div class="col-6 text-center">
+          <%= form_for(@politician) do |f| %>
+                <div class="form-group">
+                        <%= f.label :first_name, "First Name"%>
+                        <%= f.text_field :first_name, {class: "form-control"} %>
+                </div>
+                <div class="form-group">
+                        <%= f.label :last_name, "Last Name"%>
+                        <%= f.text_field :last_name, {class: "form-control"} %>
+                </div>
+                <div class="form-group">
+                        <%= f.label :img_url, "Image URL"%>
+                        <%= f.text_field :img_url, {class: "form-control"} %>
+                </div>
+                <div class="form-group">
+                    <label for="politician[state]">State:</label>
+                      <select name="politician[state]">
+                        <% @state_array.each do |state_hash| %>
+                            <option value="<%= state_hash[:abbreviation] %>"><%= state_hash[:name] %></option>
+                        <% end %>
+                        <%= f.collection_select(:state, @state_array, "values.first", "values.first") %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <%= f.label :chamber %>
+                    <%= f.collection_select(:chamber, @chamber_array, :itself, :itself) %>
+                      
+                </div>
+                <div class="form-group">
+                    <%= f.label :party, "Party:" %>
+                    <%= f.collection_select(:party, @party_array, :itself, :itself) %>
+                      
+                </div>
+
+              <%= submit_tag "Register", class:"btn btn-secondary text-center" %>
+        <% end %>
+          </div>
+        </div>
+    </div>

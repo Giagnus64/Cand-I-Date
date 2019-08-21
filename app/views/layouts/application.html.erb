@@ -18,16 +18,16 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       <% if @logged_in %>
-        <%= link_to @current_user.full_name, @current_user, class: "nav-item nav-link active mr-3"%>
+        <%= link_to @current_user.full_name, @current_user, class: "nav-item nav-link active mr-3 btn btn-secondary"%>
         <%= button_to "Logout", {action: "destroy", :controller=>"login", method: :delete}, class:"btn btn-danger my-2 my-sm-0", form_class: "form-inline" %>
       <% else %>
-        <%= link_to "Login", home_path, class: "nav-item nav-link active mr-3"%>
-        <%= link_to "Register", new_user_path, class: "nav-item nav-link active"%>
+        <%= link_to "Login", home_path, class: "nav-item nav-link active mr-3 btn btn-secondary"%>
+        <%= link_to "Register", new_user_path, class: "nav-item nav-link active btn btn-secondary"%>
       <% end %>
       </div>
   </div>
 </nav>
-  <div class="d-flex mx-auto justify-content-center">      
+  <div class="d-block justify-content-center">      
      
     <%= yield %>
         

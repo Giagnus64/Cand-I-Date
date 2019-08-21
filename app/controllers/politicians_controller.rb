@@ -17,6 +17,8 @@ class PoliticiansController < ApplicationController
     #make a politician
     def new
     @politician = Politician.new()
+    @state_array = Politician.state_array
+    @chamber_array = Politician.chamber_array
     end
 
     #make a politician
@@ -30,8 +32,11 @@ class PoliticiansController < ApplicationController
         redirect_to(new_politician_path)
         end
     end
+ 
     #edit politician stats page
+ 
     def edit
+        
     end
 
     def update
@@ -53,5 +58,6 @@ class PoliticiansController < ApplicationController
     def politician_params
         permitted = params.require(:politician).permit(:first_name, :last_name, :state, :chamber, :party, :img_url)
     end
+
 
 end
