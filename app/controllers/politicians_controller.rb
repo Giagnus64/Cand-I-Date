@@ -1,10 +1,14 @@
 class PoliticiansController < ApplicationController
-    before_action :find_politician, only: [:show, :edit, :update]
     before_action :authorized
+    before_action :find_politician, only: [:show, :edit, :update]
+    
+    
     #page to swipe on
     def index
     @politicians = Politician.all
+    @politician = @politicians.sample
     end
+
     #politician's show page
     def show
     
