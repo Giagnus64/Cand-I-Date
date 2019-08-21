@@ -8,12 +8,16 @@ class LoginController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      byebug
-      redirect_to ("/")
+      redirect_to (@user)
     else
       flash[:message] = "Incorrect username or password"
-      redirect_to "/welcome"
+      redirect_to "/login"
     end
+  end
+
+  def destroy
+   logout
+   redirect_to("/login")
   end
 
 end

@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:show, :new, :create, :edit, :update, :delete]
-    before_action :authorized, only: [:index, :show, :edit, :update, :delete]
+     before_action :authorized, only: [:index, :show, :edit, :update, :delete]
+    #  before_action :find_user, only: [:show, :new, :create, :edit, :update, :delete]
+   
     # page unknown use
     def index
         @users = User.all
     end
+    
     # Your Profile
     def show
         
@@ -30,23 +32,25 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user.update(user_params)
-        if @user.valid?    
-            redirect_to @user
+        @current_user.update(user_params)
+        if @current_user.valid?    
+            redirect_to @current_user
         else
-            flash[:errors] = @user.errors.full_messages
+            flash[:errors] = @current_user.errors.full_messages
         end
     end
     #button to destroy on edit profile page
     def destroy
-        @user.destroy
+        @current_user.destroy
+        logout
         redirect_to login_path
     end
 
     private
-    def find_user
-        @user = User.find_by(params[:id])
-    end
+
+    # def find_user
+    #     @user = User.find_by(params[:id])
+    # end
 
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :password)
