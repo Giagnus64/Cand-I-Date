@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/login", to:"login#new", as: "home"
   post "/login", to:"login#create"
   post "/logout", to:"login#destroy"
+  
   # login_path
   #start_swiping_path
   root "login#new"
