@@ -5,8 +5,9 @@ class PoliticiansController < ApplicationController
     
     #page to swipe on
     def index
-    @politicians = Politician.all
-    @politician = @politicians.sample
+        @politicians =  @current_user.has_not_seen
+       
+        @politician = @politicians.sample
     end
 
     #politician's show page
