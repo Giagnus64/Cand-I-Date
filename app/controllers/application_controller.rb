@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_up_auth_variables
 
+
   def set_up_auth_variables
     @user_id = session["user_id"]
     #makes logged_in true or false
