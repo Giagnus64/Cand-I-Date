@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CandIDate</title>
+    <title>Cand-i-Date</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to "Cand-i-Date", politicians_path, class: "navbar-brand"%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <% if @logged_in %>
+        <%= link_to @current_user.full_name, @current_user, class: "nav-item nav-link active mr-3"%>
+        <%= button_to "Logout", {action: "destroy", :controller=>"login", method: :delete}, class:"btn btn-danger my-2 my-sm-0", form_class: "form-inline" %>
+      <% else %>
+        <%= link_to "Login", home_path, class: "nav-item nav-link active mr-3"%>
+        <%= link_to "Register", new_user_path, class: "nav-item nav-link active"%>
+      <% end %>
+      </div>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

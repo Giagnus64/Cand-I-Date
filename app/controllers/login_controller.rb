@@ -20,4 +20,5 @@ class LoginController < ApplicationController
    redirect_to("/login")
   end
 
+
 end
