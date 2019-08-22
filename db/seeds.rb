@@ -52,14 +52,39 @@ llsm = Politician.create({:first_name=>"Lloyd", :last_name=>"Smucker", :party=>"
 ratl = Politician.create({:first_name=>"Rashida", :last_name=>"Tlaib", :party=>"D", :chamber=>"house", :state=>"MI", :img_url => "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Rashida_Tlaib%2C_official_portrait%2C_116th_Congress_%28cropped_2%29.jpg/440px-Rashida_Tlaib%2C_official_portrait%2C_116th_Congress_%28cropped_2%29.jpg"})
 
 
-abo = Issue.create(topic:"Abortion", approval_statement: "I believe women are autonomous beings and have control over their on bodies.", disapproval_statement: "I dominate women as they are my property. ")
-imm = Issue.create(topic:"Immigration", approval_statement: "The U.S. was built by and for immigrants.", disapproval_statement: "Fuck you, I got mine. #BuildTheWall")
-gun = Issue.create(topic:"Gun Control", approval_statement: "America has a gun problem.", disapproval_statement: "I am a gold star member of the NRA.")
-mar = Issue.create(topic:"Marijuana", approval_statement: "Legalize it, brah. 🥦", disapproval_statement: "Marijuana is a gateway drug to premarital sex. I want more slave labor for our prisons. ")
-cli = Issue.create(topic:"Climate Change", approval_statement: "We must take action to preserve Mother Earth.", disapproval_statement: "I don't believe in Science and I support natural gas.")
-hea = Issue.create(topic:"Healthcare", approval_statement: "Healthcare is a human right. ", disapproval_statement: "I want to make money off of sick people. Perdue is my #1 campaign contributor.")
-cor = Issue.create(topic:"Corruption", approval_statement: "I'm a politician for the money. #superPACS4lyfe", disapproval_statement: "Most of my campaign funds come from independent donors.")
-imp = Issue.create(topic:"Imperialism", approval_statement: "I'm a colonizer.", disapproval_statement: "We shouldn't pursue reckless adventures abroad, we should rebuild America's strength at home.")
+abo_pro = "I believe women are autonomous beings and have control over their on bodies.;Reproductive rights are human rights.;Reproductive rights are human rights.;#METOO;Restricting reproductive rights is a form of eugenics."
+
+abo_anti = "Abortion? Thanks,I hate it.;I dominate women as they are my property.;Rape is in God's plan. #Drake;Abortion is murder.;Fuck you, I got mine.;Defund planned parenthood.;Coat hangers are multi-purpose."
+
+imm_pro = "The U.S. was built by and for immigrants.;It's legal to seek asylum in the U.S.;We should aim to help those in need.;Detention centers are concentration camps.;#FUCKICE."
+imm_anti = "Immigration? Thanks, I hate it.;Fuck you, I got mine. #BuildTheWall;White is right.;I hate strangers.;Columbus day is not racist, it's about Italian pride."
+
+gun_pro = "America has a gun problem.;There is not need for citizens to have assault rifles.;The NRA are evil lobbyists."
+gun_anti ="Gun Control? Thanks, I hate it.;I am a gold star member of the NRA.;We shouldn't take away guns from 10 year old girls on their birthdays.;Mah guns protect me from da guvm't."
+
+mar_pro = "Legalize it, brah. 🥦;Alcohol is more dangerous than marijuana, and it's legal.;Prescriptions drugs have a higher chance of killing you than marijuana.;The war on drugs does more harm than good."
+mar_anti = "Marijuana? Thanks, I hate it.;Marijuana is a gateway drug to premarital sex.;I want more slave labor for our prisons.;Marijuana is a gateway drug to premarital sex.;I want more slave labor for our prisons.; Reefer is for satan worshippers."
+
+cli_pro = "We must take action to preserve Mother Earth.;We should be stewards of the Earth.;The Earth shouldn't be ruined by greedy fucks."
+cli_anti = "Climate Change is fake news.;I don't believe in Science and I support natural gas.;Coal companies are still relevant.;I'm a greedy fuck who is ruining the earth.;I'll lease my land to gas companies if I fucking want to.;#NotInMyBackYard"
+
+hea_pro = "Healthcare is a human right.;We shouldn't make money off of sick people.;Insulin is a human right."
+hea_anti = "Public health care? Thanks, I hate it.;#HealthCareIsAPriveligeNotARight;I want to make money off of sick people.;Perdue is my #1 campaign contributor.;If people get sick, it's their fault.;I value money more than I value human lives." 
+
+cor_pro = "Fuck you, I got my power and who cares how I got it.;#Macciavelli.; I'm a politician for the money. #superPACS4lyfe;i'm a politician for the benefits.;I'm happy to represent the 1%."
+cor_anti = "Corruption? Thanks, I hate it.;Most of my campaign funds come from independent donors.;The U.S. is an oligarchy.;It's morally deficient for a society to have billionaires."
+
+imp_pro = "Fuck you, I got mine. #Imperialist;I'm a colonizer.;I support the troops because they keep me in power. I'm pro-monsanto. America has Big Dick Energy.;Liberalism is fucking great."
+imp_anti = "Imperialism? Thanks, I hate it.;We shouldn't pursue reckless adventures abroad, we should rebuild America's strength at home.;America's military is overcompensation for our poor treatment of our citizens."
+
+abo = Issue.create(topic:"Abortion", approval_statement: abo_pro, disapproval_statement: abo_anti)
+imm = Issue.create(topic:"Immigration", approval_statement: imm_pro, disapproval_statement: imm_anti)
+gun = Issue.create(topic:"Gun Control", approval_statement: gun_pro, disapproval_statement:gun_anti )
+mar = Issue.create(topic:"Marijuana", approval_statement: mar_pro, disapproval_statement: mar_anti)
+cli = Issue.create(topic:"Climate Change", approval_statement: cli_pro, disapproval_statement: cli_anti)
+hea = Issue.create(topic:"Healthcare", approval_statement: hea_pro, disapproval_statement: hea_anti)
+cor = Issue.create(topic:"Corruption", approval_statement: cor_pro, disapproval_statement: cor_anti)
+imp = Issue.create(topic:"Imperialism", approval_statement: imp_pro, disapproval_statement: imp_anti)
 
 # Politician.all.each do |politician|
 #     puts "##{politician[:first_name] + " " + politician[:last_name]}"

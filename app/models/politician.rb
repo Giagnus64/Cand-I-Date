@@ -32,9 +32,9 @@ class Politician < ApplicationRecord
         bio_sentences = []
         self.stances.each do |stance|
             if stance.support
-                bio_sentences << stance.issue.approval_statement
+                bio_sentences << stance.issue.generate_approval_statement
             else
-                bio_sentences << stance.issue.disapproval_statement
+                bio_sentences << stance.issue.generate_disapproval_statement
             end
         end
         bio_sentences.shuffle.join(" ")
