@@ -5,9 +5,13 @@ class PoliticiansController < ApplicationController
     
     #page to swipe on
     def index
+        #checks if user has seen all politicians
+        if @current_user.has_not_seen.count > 0
         @politicians =  @current_user.has_not_seen
-       
         @politician = @politicians.sample
+        else 
+            @politician = 0
+        end
     end
 
     #politician's show page
@@ -24,12 +28,12 @@ class PoliticiansController < ApplicationController
     end
 
     #make a politician
-    #also assign issues to that politician
+    #also assign stances to that politician
     def create 
     @politician = Politician.create(politician_params)
         if @politician.valid?
             @politician.assign_stances(params[:stance])
-        redirect_to(politicians_path)
+        redirect_to(@politician)
         else
         flash[:errors] = @politician.errors.full_messages
         redirect_to(new_politician_path)
