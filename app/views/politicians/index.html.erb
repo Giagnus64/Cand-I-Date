@@ -27,7 +27,7 @@
                   
                     <p class="card-text"><%= @politician.bio%></p>
                  
-                  <%= button_to  "Swipe Left", {:controller => "follows", :action => "create",  :user_id => @current_user.id, :politician_id => @politician.id, :match=> false, :method => :post}, class:"btn btn-dark" %>
+                  <%= button_to  "Thanks, I hate it.", {:controller => "follows", :action => "create",  :user_id => @current_user.id, :politician_id => @politician.id, :match=> false, :method => :post}, class:"btn btn-dark" %>
                   <%= button_to  "Swipe Right", {:controller => "follows", :action => "create", :user_id => @current_user.id, :politician_id => @politician.id, :match=> true, :method => :post}, class:"btn btn-dark" %>
                 </div>
               </div>

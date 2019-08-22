@@ -1,16 +1,20 @@
-<% if flash[:errors] %>
-  <% flash[:errors].each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-<% end %>
-
-  <div class="container border border-dark rounded mt-5 py-4 bg-success ">
-  <% if !@logged_in %>
-
-        <h1 class="mx-auto text-center py-2">Register</h1>
-        <div class="row justify-content-center">
-          <div class="col-6 text-center">
-          <%= form_for(@user) do |f| %>
+ <div class="container">  
+<% if !@logged_in %>
+      <div class="row justify-content-center border border-dark rounded mt-5 py-4 bg-info">
+        <% if flash[:errors] %>
+        <div class="col-7">
+          <div class="bg-danger text-center border border-dark rounded font-weight-light text-light pt-2 mb-2 errors">
+          <% flash[:errors].each do |msg| %>
+            <% if msg != "Password digest can't be blank" %>
+              <p><%= msg %></p>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+        <% end %>
+          <div class="col-7 text-center">
+          <h2 class="text-center">Register</h2>
+            <%= form_for(@user) do |f| %>
                 <div class="form-group">
                         <%= f.label :first_name%>
                         <%= f.text_field :first_name, {class: "form-control"} %>
@@ -33,13 +37,12 @@
             <% end %>
           </div>
         </div>
-      
+    </div>
+
+
   <% else %>
-    <div class="row align-items-center">
-      <div class="col-auto align-self-center">
-        <h1 class="logged-in-message mx-auto my-auto h-100 text-center">You are already logged in as <%= @current_user.full_name %>!</h1>
-      </div>
+  <div class="row justify-content-center mt-5">
+    <h1 class="logged-in-message text-center">You are already logged in as <%= @current_user.full_name %>!</h1>
     </div>
   <% end %>
-
-</div>
+  </div>
