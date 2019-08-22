@@ -1,7 +1,7 @@
-<div class="container ">
-  <div class="row">
-    <div class="col-lg-6 offset-lg-3">
-      <div class="card " >
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="card">
         <div class="row no-gutters justify-content-around">
           <div class="col-md-4">
               <!--<div class="card" style="width: 18rem;">-->
@@ -28,7 +28,7 @@
                     <p class="card-text"><%= @politician.bio%></p>
                  
                   <%= link_to "Edit", edit_politician_path(@politician), class:"btn btn-dark" %>
-                  <%= button_to  "Unfollow",follow_path(@current_user.follows.find_by(:politician_id=>@politician.id).id), params:{:user_id => @current_user.id, :politician_id => @politician.id, :match=> false}, :method => :patch %>
+                  <%= button_to  "Unfollow",follow_path(@current_user.follows.find_by(:politician_id=>@politician.id).id), params:{:user_id => @current_user.id, :politician_id => @politician.id, :match=> false}, :method => :patch, class: "btn btn-dark" %>
                 </div>
               </div>
         </div>

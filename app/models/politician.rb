@@ -67,13 +67,6 @@ class Politician < ApplicationRecord
     end
 
 
-
-
-
-
-
-
-
     def self.chamber_array
         ["Senate", "House", "Other/Local Respresentative"]
     end

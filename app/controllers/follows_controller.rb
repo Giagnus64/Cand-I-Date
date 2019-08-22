@@ -12,7 +12,6 @@ class FollowsController < ApplicationController
 
     def update    
         #@follow = Follow.find_by(user_id: params["user_id"],politician_id: params["politician_id"])
-        byebug
         @follow.update(follow_params)
         redirect_to politicians_path
     end
