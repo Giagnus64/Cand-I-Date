@@ -58,6 +58,22 @@ class Politician < ApplicationRecord
         urls.sample
     end
 
+
+    def assign_stances(stance_hash)
+        stance_hash.each do |topic, support|
+            issue = Issue.find_by(topic: topic)
+            new_stance = self.stances.create(issue: issue, support: support)
+        end
+    end
+
+
+
+
+
+
+
+
+
     def self.chamber_array
         ["Senate", "House", "Other/Local Respresentative"]
     end

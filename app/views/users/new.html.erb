@@ -1,22 +1,19 @@
- <div class="container">
-      <div class="row">
-        <div class="col-12">
-            <h1 class="mx-auto text-center pt-5">Welcome To Cand-i-Date!</h1>
-        </div>
-      </div>
+ <div class="container">  
 <% if !@logged_in %>
       <div class="row justify-content-center border border-dark rounded mt-5 py-4 bg-info">
         <% if flash[:errors] %>
         <div class="col-7">
-          <div class="bg-danger text-center border border-dark rounded font-weight-light text-light pt-2 mb-2">
+          <div class="bg-danger text-center border border-dark rounded font-weight-light text-light pt-2 mb-2 errors">
           <% flash[:errors].each do |msg| %>
-          <p><%= msg %></p>
+            <% if msg != "Password digest can't be blank" %>
+              <p><%= msg %></p>
+            <% end %>
           <% end %>
           </div>
         </div>
         <% end %>
           <div class="col-7 text-center">
-          <h2 class="text-center">Login</h2>
+          <h2 class="text-center">Register</h2>
             <%= form_for(@user) do |f| %>
                 <div class="form-group">
                         <%= f.label :first_name%>
