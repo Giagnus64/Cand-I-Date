@@ -28,7 +28,11 @@
                     <p class="card-text"><%= @politician.bio%></p>
                  
                   <%= link_to "Edit", edit_politician_path(@politician), class:"btn btn-dark" %>
-                  <%= button_to  "Unfollow",follow_path(@current_user.follows.find_by(:politician_id=>@politician.id).id), params:{:user_id => @current_user.id, :politician_id => @politician.id, :match=> false}, :method => :patch, class: "btn btn-dark" %>
+                  <% if @current_user.politicians.include?(@politician) %>
+                    <%= button_to  "Unfollow",follow_path(@current_user.follows.find_by(:politician_id=>@politician.id).id), params:{:user_id => @current_user.id, :politician_id => @politician.id, :match=> false}, :method => :patch, class: "btn btn-dark" %>
+                  <% else %>
+                    <%= button_to "Follow", {:controller => "follows", :action => "create", :user_id => @current_user.id, :politician_id => @politician.id, :match=> true, :method => :post}, class:"btn btn-dark" %>
+                  <% end %>
                 </div>
               </div>
         </div>
