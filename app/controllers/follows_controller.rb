@@ -1,5 +1,6 @@
 class FollowsController < ApplicationController
     before_action :find_follow, only: [:edit, :update]
+    before_action :authorized
     def create
         
         @follow = Follow.create(follow_params)
@@ -13,7 +14,7 @@ class FollowsController < ApplicationController
     def update    
         #@follow = Follow.find_by(user_id: params["user_id"],politician_id: params["politician_id"])
         @follow.update(follow_params)
-        redirect_to politicians_path
+        redirect_to(@current_user)
     end
 
     private
