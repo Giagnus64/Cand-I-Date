@@ -1,14 +1,19 @@
-<h1 class="mx-auto text-center pt-5">Welcome To Cand-I-Date!</h1>
 
-<% if flash[:message] %>
-  <p><%= flash[:message] %></p>
-<% end %>
-
+ <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <h1 class="mx-auto text-center pt-5">Welcome To Cand-i-Date!</h1>
+        </div>
+      </div>
 <% if !@logged_in %>
-    <div class="container border border-dark rounded mt-5 py-4 bg-info">
-        <h2 class="text-center">Login</h2>
-        <div class="row justify-content-around">
+      <div class="row justify-content-center border border-dark rounded mt-5 py-4 bg-info">
+        <% if flash[:message] %>
+        <div class="col-7">
+          <p class="bg-danger text-center border border-dark rounded font-weight-light text-light p-2"><%= flash[:message] %></p>
+        </div>
+        <% end %>
           <div class="col-6 text-center">
+          <h2 class="text-center">Login</h2>
             <%= form_tag "/login" do %>
                 <div class="form-group">
                         <%= label_tag :email%>
@@ -23,12 +28,12 @@
             <% end %>
           </div>
         </div>
-  </div>
+    </div>
 
 
   <% else %>
-  <div class="row justify-content-center">
-    <h1 class="logged-in-message">You are already logged in as <%= @current_user.full_name %>!</h1>
+  <div class="row justify-content-center mt-5">
+    <h1 class="logged-in-message text-center">You are already logged in as <%= @current_user.full_name %>!</h1>
     </div>
   <% end %>
   </div>

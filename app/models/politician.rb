@@ -62,7 +62,23 @@ class Politician < ApplicationRecord
         ["Senate", "House", "Other/Local Respresentative"]
     end
     def self.party_array
-        [{}]
+        [{
+            name: "Democrat",
+            abbreviation: "D"
+        },
+        {
+            name: "Republican",
+            abbreviation: "R"
+        },
+        {
+            name:"Independent", 
+            abbreviation: "I"
+        },
+        {
+            name: "Green", 
+            abbreviation: "G"
+        }
+        ]
     end
 
     def self.state_array

@@ -19,6 +19,7 @@ class PoliticiansController < ApplicationController
     @politician = Politician.new()
     @state_array = Politician.state_array
     @chamber_array = Politician.chamber_array
+    @party_array = Politician.party_array
     end
 
     #make a politician
