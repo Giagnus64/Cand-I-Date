@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
     #method to filter out follow instances where match is true
     def swipe_right
-        Follow.all.select do |follow|
+        self.follows.all.select do |follow|
             follow.match #returns true if true, returns false if false
         end
     end
