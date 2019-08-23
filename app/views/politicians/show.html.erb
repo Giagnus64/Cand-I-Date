@@ -19,13 +19,12 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">State: <%= @politician.state %></li>
                 <li class="list-group-item">Party: <%= @politician.party%></li>
-                <li class="list-group-item">Chamber: <%= @politician.chamber%></li>
+                <li class="list-group-item border-bottom">Chamber: <%= @politician.chamber%></li>
               </ul>
           </div>
           <div class="card-body ">
                 <div class="row col-md-12 justify-content-around">
-                  
-                    <p class="card-text"><%= @politician.bio%></p>
+                    <p class="card-text pb-3 border-bottom"><%= @politician.bio%></p>
                  
                   <%= link_to "Edit", edit_politician_path(@politician), class:"btn btn-dark" %>
                   <% if @current_user.politicians.include?(@politician) %>
