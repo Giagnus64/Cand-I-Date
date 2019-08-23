@@ -1,24 +1,29 @@
-# README
+# Cand-i-Date
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Authors: [Alessandra Vertrees](https://github.com/avertrees) & [Gianfranco Nuschese](https://github.com/Giagnus64) ###
 
-Things you may want to cover:
+### Description: ###
+A webapp that built with Rails that allows users to follow specific politicians. Users can login, edit/delete their profiles, follow select politicians, and add new politicians to follow. All politicians by default are treated as lizard people.  
 
-* Ruby version
+## Languages & tools
 
-* System dependencies
+- Rails
+- BCrypt
+- Postgres
+- Bootstrap for styling
+- ProPublica API
+ - Used to seed initial data
 
-* Configuration
+## Instructions
 
-* Database creation
+ - Install [RAILS](http://installrails.com/)
+ - Install [Postgres](https://www.postgresql.org/download/)
+ - Clone this repo
+ - run `rails db:create`
+ - run `rails db:migrate`
+ - run `rails db:seed`
+ - run `rails s`
 
-* Database initialization
+## TODO
+[ ] - Deploy Website
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
