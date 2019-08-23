@@ -13,7 +13,7 @@
             
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 border-bottom border-light">
             
               <div class="card-body">
                 <h5 class="card-title"><%= @politician.full_name %></h5>
@@ -21,13 +21,13 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">State: <%= @politician.state %></li>
                 <li class="list-group-item">Party: <%= @politician.party%></li>
-                <li class="list-group-item">Chamber: <%= @politician.chamber%></li>
+                <li class="list-group-item border-bottom">Chamber: <%= @politician.chamber%></li>
               </ul>
           </div>
-          <div class="card-body ">
+          <div class="card-body">
                 <div class="row col-md-12 justify-content-around">
                   
-                    <p class="card-text"><%= @politician.bio%></p>
+                    <p class="card-text pb-3 border-bottom"><%= @politician.bio%></p>
                  
                   <%= button_to  "Thanks, I hate it.", {:controller => "follows", :action => "create",  :user_id => @current_user.id, :politician_id => @politician.id, :match=> false, :method => :post}, class:"btn btn-dark" %>
                   <%= button_to  "Swipe Right", {:controller => "follows", :action => "create", :user_id => @current_user.id, :politician_id => @politician.id, :match=> true, :method => :post}, class:"btn btn-dark" %>

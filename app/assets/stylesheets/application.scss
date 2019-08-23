@@ -21,6 +21,20 @@
      margin-top:50px;
      margin-bottom:50px;
  }
+ .form-shadow{
+   box-shadow: 0 0 4px 4px rgba(179, 186, 206, 0.767);
+   border: 2px solid rgb(161, 158, 170);
+ }
+ .navbar{
+   box-shadow: 1px 4px 2px -2px gray;
+ }
+ .card{
+   box-shadow: 0 0 4px 4px rgba(179, 186, 206, 0.767);
+   border: 2px solid rgb(161, 158, 170);
+ }
+ .card-columns > .card{
+  box-shadow: 0 0 0 0;
+ }
  .new_politician{
    text-align: left;
  }
@@ -109,4 +123,16 @@ animation-direction: alternate-reverse;
   @include media-breakpoint-only(xl) {
     column-count: 5;
   }
+}
+
+
+.welcome{
+    animation: color-change 3s infinite;
+}
+@keyframes color-change {
+    0% { color: red; }
+    25%{ color:white;}
+    50% { color: blue; }
+    75% { color:white;}
+    100% { color:red; }
 }
