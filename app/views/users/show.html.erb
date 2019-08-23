@@ -1,3 +1,4 @@
+<% if @current_user.politician_matches.count > 0 %>
 <div class="card-columns">
 <% @current_user.politician_matches.each do |politician| %>
 <%# make a link to each politician %>
