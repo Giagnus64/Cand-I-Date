@@ -1,16 +1,16 @@
 
  <div class="container">
-      <div class="row justify-content-center border border-dark rounded mt-5 py-4 bg-info">
+      <div class="row justify-content-center border rounded mt-5 py-4">
         <% if flash[:errors] %>
         <div class="col-7">
-          <div class="bg-danger text-center border border-dark rounded font-weight-light text-light pt-2 mb-2 errors">
+          <div class="bg-danger text-center border rounded font-weight-light text-light pt-2 mb-2 errors">
           <% flash[:errors].each do |msg| %>
           <p><%= msg %></p>
           <% end %>
           </div>
         </div>
         <% end %>
-          <div class="col-6 text-center">
+          <div class="col-6">
           <h2 class="text-center">New Politician</h2>
            <%= form_for(@politician) do |f| %>
                 <div class="form-group">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="politician[state]">State:</label>
-                      <select name="politician[state]">
+                      <select name="politician[state]", class="form-control">
                         <% @state_array.each do |state_hash| %>
                             <option value="<%= state_hash[:abbreviation] %>"><%= state_hash[:name] %></option>
                         <% end %>
@@ -35,85 +35,102 @@
                 </div>
                 <div class="form-group">
                     <%= f.label :chamber, "Chamber:" %>
-                    <%= f.collection_select(:chamber, @chamber_array, :itself, :itself) %>
+                    <%= f.collection_select(:chamber, @chamber_array, :itself, :itself)%>
                 </div>
                 <div class="form-group">
                     <label for="politician[party]">Party:</label>
-                      <select name="politician[party]">
+                      <select name="politician[party]", class="form-control">
                         <% @party_array.each do |party_hash| %>
                             <option value="<%= party_hash[:abbreviation] %>"><%= party_hash[:name] %></option>
                         <% end %>
                     </select>
                 </div>
-                <div class="sub-form">
+                <div class="sub-form text-center">
                   <h2>Politician Stances:</h2>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Abortion</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Abortion</h5>
                   <p>Mark true for pro-choice, false for pro-life.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Abortion]" class="mr-3" type="radio" value="true" checked="checked" />
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Abortion]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Abortion] " class="mr-3 form-check-input" type="radio" value="true" checked="checked" />
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Abortion]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Immigration</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <label class="">Immigration</label>
+                  <h5>Immigration</h5>
                   <p>Mark true for pro-immigration, false for xenophobia.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Immigration]" class="mr-3" type="radio" value="true" checked="checked" />
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Immigration]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Immigration]" class="mr-3 form-check-input" type="radio" value="true" checked="checked" />
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Immigration]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Gun Control</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Gun Control</h5>
                   <p>Mark true for taking away rifles from 10 year old girls on their birthdays, false for Git-R-Done.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Gun Control]" class="mr-3" type="radio" value="true" checked="checked" />
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Gun Control]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Gun Control]" class="mr-3 form-check-input" type="radio" value="true" checked="checked" />
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Gun Control]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Marijuana</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Marijuana</h5>
                   <p>Mark true for legalize it, false for prison slave labor.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Marijuana]" class="mr-3" type="radio" value="true" checked="checked" />
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Marijuana]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Marijuana]" class="mr-3 form-check-input" type="radio" value="true" checked="checked" />
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Marijuana]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Climate Change</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Climate Change</h5>
                   <p>Mark true for renewable energy, false for oil/gas company lackey.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Climate Change]" class="mr-3" type="radio" value="true" checked="checked" />
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Climate Change]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Climate Change]" class="mr-3 form-check-input" type="radio" value="true" checked="checked" />
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Climate Change]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Healthcare</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Healthcare</h5>
                   <p>Mark true for healthcare is a human right, false for making money off of sick people.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Healthcare]" class="mr-3" type="radio" value="true" checked="checked"/>
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Healthcare]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Healthcare]" class="mr-3 form-check-input" type="radio" value="true" checked="checked"/>
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Healthcare]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Corruption</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Corruption</h5>
                   <p>Mark true for voter suppression, false for getting money out of politics.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Corruption]" class="mr-3" type="radio" value="true" checked="checked"/>
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Corruption]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Corruption]" class="mr-3 form-check-input" type="radio" value="true" checked="checked"/>
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Corruption]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
-                <div class="form-group bg-primary border border-dark rounded py-1">
-                  <h3>Imperialism</h3>
+                <div class="form-group bg-form border rounded py-1">
+                  <h5>Imperialism</h5>
                   <p>Mark true for the war for oil, false for decrease military spending.</p>
-                  <label for="true_stance" class="mr-1">True</label>
-                  <input id="true_stance" name="stance[Imperialism]" class="mr-3" type="radio" value="true" checked="checked"/>
-                  <label for="false_stance" class="mr-1">False</label>
-                  <input id="false_stance" name="stance[Imperialism]" type="radio" value="false"/>
+                  <div class="form-check form-check-inline">
+                    <label for="true_stance" class="mr-1 form-check-label">True</label>
+                    <input id="true_stance" name="stance[Imperialism]" class="mr-3 form-check-input" type="radio" value="true" checked="checked"/>
+                    <label for="false_stance" class="mr-1 form-check-label">False</label>
+                    <input id="false_stance" name="stance[Imperialism]" class="form-check-input" type="radio" value="false"/>
+                  </div>
                 </div>
 
-              <%= submit_tag "Submit", class:"btn btn-secondary text-center" %>
+              <%= submit_tag "Submit", class:"btn btn-secondary text-center", style:"float: right;" %>
         <% end %>
           </div>
         </div>

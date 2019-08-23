@@ -3,8 +3,8 @@
 <%# make a link to each politician %>
     <div class="card ">
         <%= image_tag politician.img_url, {class:"card-img-top"}%>
-        <div class="card-body">
-            <%= link_to politician.full_name, politician_path(politician) %></p>
+        <div class="card-body text-center">
+            <%= link_to politician.full_name, politician_path(politician), class:"btn btn-profile" %></p>
         </div>
     </div>
 <% end %>
