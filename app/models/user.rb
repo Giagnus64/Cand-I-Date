@@ -30,4 +30,17 @@ class User < ApplicationRecord
             Politician.find(follow.politician_id)
         end
     end
+    
+
+    def hated_follows
+        self.follows.select do |follow|
+            follow.match == false
+        end
+    end
+
+    def hated_politicians
+        self.hated_follows.map do |follow|
+            Politician.find(follow.politician_id)
+        end
+    end
 end

@@ -1,6 +1,6 @@
 <div class="container justify-content-center">
-    <h1 class="text-center">Politicians You Follow:</h1>
-    <div class="row">
+    <h1 class="text-center pb-2">Politicians You Follow:</h1>
+    <div class="row py-2">
         <% if @current_user.politician_matches.count > 0 %>
             <div class="card-columns">
             <% @current_user.politician_matches.each do |politician| %>
@@ -12,6 +12,7 @@
                     </div>
                 </div>
             <% end %>
+            </div>
         <% else %>
             <div class="container text-center">
             <h1 class="mb-5">No Matches Yet!</h1>
@@ -19,7 +20,28 @@
             </div>
         <% end %>
     </div>
-</div>
+
+    <h1 class="text-center pb-2">Politicians You Hate:</h1>
+    <div class="row py-2">
+        <% if @current_user.hated_politicians.count > 0 %>
+            <div class="card-columns">
+            <% @current_user.hated_politicians.each do |politician| %>
+            <%# make a link to each politician %>
+                <div class="card">
+                    <%= image_tag politician.img_url, {class:"card-img-top border-bottom"}%>
+                    <div class="card-body text-center">
+                        <%= link_to politician.full_name, politician_path(politician), class:"btn btn-profile" %></p>
+                    </div>
+                </div>
+            <% end %>
+            </div>
+        <% else %>
+            <div class="container text-center">
+            <h1 class="mb-5">No Hates Yet!</h1>
+            <%= link_to "Get Hatching!", politicians_path, class:"btn btn-primary btn-lg" %>
+            </div>
+        <% end %>
+    </div>
 
     <div class="row justify-content-around text-center mt-5">
         <div class="col-6">
@@ -29,3 +51,4 @@
         <%= button_to "Delete Profile", @current_user, method: :delete, class:"btn btn-danger" %>
         </div>
     </div>
+</div>
