@@ -6,10 +6,17 @@
         <div class="card-body text-center">
             <%= link_to politician.full_name, politician_path(politician), class:"btn btn-profile" %></p>
         </div>
+    <% end %>
     </div>
-<% end %>
+<% else %>
+<div class="container text-center">
+<h1 class="mb-5">No Matches Yet!</h1>
+<%= link_to "Get Matching!", politicians_path, class:"btn btn-primary btn-lg" %>
 </div>
-<div class="row justify-content-around">
+
+<% end %>
+
+<div class="row justify-content-around mt-5">
 <%= link_to "Edit Profile", edit_user_path(@current_user), class: "btn btn-secondary"%>
 <%= button_to "Delete Profile", @current_user, method: :delete, class:"btn btn-danger" %>
 </div>
