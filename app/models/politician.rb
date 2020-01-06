@@ -19,7 +19,7 @@ class Politician < ApplicationRecord
         end
     end
 
-    #generate bio via there stance on certain issues
+    #generate bio via their stance on certain issues
     # topic:"Abortion", 
     # topic:"Immigration"
     # topic:"Gun Control"
